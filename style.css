@@ -114,16 +114,19 @@ body{
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(196, 18, 255, 0.2);
+   border: 1px solid #7c41ad;
 }
 
-
+/* Hover */
 .categories p:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(140, 18, 255, 0.3);
-  background: linear-gradient(135deg, #d935ff, #a018ff);
+  background: linear-gradient(135deg, #e9d5ff, #d8b4fe);
+  color: #6b21a8;
+  transform: translateY(-2px);
+  border: 1px solid #6b21a8;
 }
+
 
 
 .banner {
@@ -143,8 +146,31 @@ body{
     padding: 30px 35px;
     border-radius: 12px;
     width: 420px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    
+
+    animation: floatMove 6s ease-in-out infinite;
 }
+
+/* Keyframes */
+@keyframes floatMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(20px, 0); /* move right */
+    }
+    50% {
+        transform: translate(0, -20px); /* move up */
+    }
+    75% {
+        transform: translate(-20px, 0); /* move left */
+    }
+    100% {
+        transform: translate(0, 20px); /* move down */
+    }
+}
+
+
 
 .banner-content h1 {
     font-size: 32px;
