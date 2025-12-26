@@ -65,6 +65,7 @@ body{
   display: flex;
   gap: 14px;
   align-items: center;
+  white-space: nowrap;
 }
 .navbar__s3 p {
   padding: 8px 14px;
@@ -97,6 +98,7 @@ body{
 }
 .categories {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 18px;
   padding: 18px 10px;
@@ -200,7 +202,6 @@ body{
   flex-wrap: wrap;
   gap: 20px;
   align-items: stretch;
-  flex-wrap: nowrap;
   padding-bottom: 10px;
 }
 
@@ -591,4 +592,180 @@ footer hr {
 
 .footer-lang i {
     font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar__s2 {
+    width: 100%;
+    order: 3;
+  }
+
+  .navbar__s3 p {
+    display: inline-block;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .navbar__s1__title {
+    font-size: 24px;
+  }
+
+  .navbar__s2 {
+    width: 100%;
+  }
+
+  .navbar__s3 {
+    width: auto;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .navbar__s2 input {
+    font-size: 14px;
+  }
+  .navbar__s3 {
+    gap: 8px;
+  }
+  .navbar__s3 i {
+    font-size: 14px;
+  }
+}
+
+
+<!--Categories-->
+
+
+@media (max-width: 992px) {
+  .categories {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .categories p {
+    font-size: 14px;
+    padding: 8px 18px;
+      white-space: normal;       /* ✅ allow text wrap */
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .categories {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 14px;
+    gap: 14px;
+  }
+
+ .categories p {
+    display: inline-flex;        
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;        
+    flex-shrink: 0;             
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  /* Hide scrollbar (clean look) */
+  .categories::-webkit-scrollbar {
+    display: none;
+  }
+  .categories {
+    scrollbar-width: none;
+  }
+}
+@media (max-width: 480px) {
+  .categories {
+    gap: 12px;
+  }
+
+  .categories p {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}
+/* Responsive: Tablet */
+@media (max-width: 992px) {
+  .course-card {
+    flex: 1 1 45%; /* two cards per row */
+    max-width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 600px) {
+  .course-card {
+    flex: 1 1 100%; /* single card per row */
+    max-width: 100%;
+  }
+
+  .course-container {
+    gap: 15px;
+  }
+
+  .recommended h1,
+  .recommended__title {
+    font-size: 24px;
+  }
+
+  .recommended p {
+    font-size: 14px;
+  }
+}
+/* Responsive: Tablet */
+@media (max-width: 992px) {
+  .pricing-card {
+    width: 45%; /* 2 cards per row */
+    margin-bottom: 20px;
+  }
+
+  .pricing-section h2 {
+    font-size: 28px;
+  }
+
+  .pricing-section .sub-text {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 600px) {
+  .pricing-card {
+    width: 100%; /* 1 card per row */
+  }
+
+  .pricing-section h2 {
+    font-size: 24px;
+  }
+
+  .pricing-section .sub-text {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .btn-outline {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .pricing-card h3 {
+    font-size: 20px;
+  }
+
+  .pricing-card h4 {
+    font-size: 16px;
+  }
 }
